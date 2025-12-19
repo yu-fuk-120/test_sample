@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>企業サイト リニューアル想定</title>
+  <style>
+    /* ===== Reset ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333; }
+    img { max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== Layout ===== */
+    header { background: #0f172a; color: #fff; }
+    .l-header { max-width: 1100px; margin: 0 auto; padding: 16px; display: flex; justify-content: space-between; align-items: center; }
+    .l-main { max-width: 1100px; margin: 40px auto; padding: 0 16px; }
+    footer { background: #f1f5f9; padding: 24px; margin-top: 40px; font-size: 14px; }
+
+    /* ===== Header ===== */
+    .header__logo { font-size: 20px; font-weight: bold; }
+    .header__nav { display: flex; gap: 16px; }
+    .header__btn { display: none; background: none; border: none; color: #fff; font-size: 18px; }
+
+    /* ===== Hero ===== */
+    .hero { background: #e2e8f0; padding: 60px 20px; text-align: center; }
+    .hero__title { font-size: 32px; margin-bottom: 16px; }
+    .hero__text { max-width: 600px; margin: 0 auto; }
+
+    /* ===== Section ===== */
+    .section { margin-bottom: 48px; }
+    .section__title { font-size: 24px; margin-bottom: 16px; border-left: 4px solid #0f172a; padding-left: 8px; }
+
+    /* ===== Cards ===== */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .card { border: 1px solid #cbd5f5; padding: 16px; background: #fff; }
+
+    /* ===== News ===== */
+    .news li { margin-bottom: 8px; }
+
+    /* ===== Footer ===== */
+    .footer__inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .header__nav { display: none; flex-direction: column; background: #0f172a; position: absolute; top: 60px; right: 0; width: 200px; padding: 16px; }
+      .header__nav.is-open { display: flex; }
+      .header__btn { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="l-header">
+      <div class="header__logo">Sample Company</div>
+      <nav class="header__nav" id="js-nav">
+        <a href="#about">会社概要</a>
+        <a href="#service">サービス</a>
+        <a href="#news">お知らせ</a>
+      </nav>
+      <button class="header__btn" id="js-menu">☰</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero__title">企業サイト リニューアル想定</h1>
+    <p class="hero__text">大手企業のリニューアル案件を想定し、更新・改修しやすい構成を意識して制作しました。</p>
+  </section>
+
+  <main class="l-main">
+    <section class="section" id="about">
+      <h2 class="section__title">会社概要</h2>
+      <p>こちらはダミーの会社概要テキストです。既存サイトの文言差し替えや調整作業を想定しています。</p>
+    </section>
+
+    <section class="section" id="service">
+      <h2 class="section__title">サービス</h2>
+      <div class="cards">
+        <div class="card">サービスA</div>
+        <div class="card">サービスB</div>
+        <div class="card">サービスC</div>
+      </div>
+    </section>
+
+    <section class="section" id="news">
+      <h2 class="section__title">お知らせ</h2>
+      <ul class="news">
+        <li>2025/01/01 新商品ページを公開しました</li>
+        <li>2024/12/01 サイトをリニューアルしました</li>
+        <li>2024/11/01 お知らせのデザインを変更しました</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer__inner">© Sample Company</div>
+  </footer>
+
+  <script>
+    // ハンバーガーメニュー
+    const menuBtn = document.getElementById('js-menu');
+    const nav = document.getElementById('js-nav');
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('is-open');
+    });
+  </script>
+</body>
+</html>
